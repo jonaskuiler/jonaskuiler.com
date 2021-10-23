@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "jonaskuiler.com",
+    siteUrl: "https://www.jonaskuiler.com",
+    title: "JKSD",
+    description: "Freelance Software Developer with a creative mindset."
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -26,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "jonaskuiler.com",
-        short_name: "jonaskuiler.com",
+        name: "JKSD",
+        short_name: "JKSD",
         start_url: "/",
         background_color: "#000000",
         theme_color: "#000000",
