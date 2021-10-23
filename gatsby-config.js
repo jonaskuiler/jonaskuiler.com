@@ -15,5 +15,25 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "jonaskuiler.com",
+        short_name: "jonaskuiler.com",
+        start_url: "/",
+        background_color: "#000000",
+        theme_color: "#000000",
+        display: "standalone",
+        icon: "src/assets/favicon.svg",
+      },
+    },
   ],
 };
