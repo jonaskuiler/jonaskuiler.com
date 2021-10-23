@@ -5,7 +5,13 @@ import Logo from "../assets/badge.inline.svg";
 
 const Global = createGlobalStyle`
   html {
-    line-height: 16px;
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    html {
+      font-size: 16px;
+    }
   }
 
   body {
@@ -21,22 +27,27 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
+const StyledLogo = styled(Logo)`
+  width: 8rem;
+  height: 8rem;
+`
+
 const Wrapper = styled.div`
-  max-width: 1024px;
+  max-width: 64rem;
   width: 100%;
 `;
 
 const Header = styled.header`
-  padding: 80px 32px 0;
+  padding: 4rem 2rem 0;
 `;
 
 const Article = styled.article`
-  padding: 128px 32px 32px;
+  padding: 8rem 2rem 2rem;
   font-size: 2rem;
   line-height: 3rem;
 
   h1 {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
 
   p h2 {
@@ -50,7 +61,7 @@ const IndexPage = () => (
     <Global />
     <Wrapper>
       <Header>
-        <Logo width={128} height={128} />
+        <StyledLogo />
       </Header>
       <Article>
           <h1>Hi, I'm Jonas Kuiler.</h1>
