@@ -28,30 +28,51 @@ const Container = styled.div`
 `;
 
 const StyledLogo = styled(Logo)`
-  width: 8rem;
-  height: 8rem;
-`
+  width: 6rem;
+  height: 6rem;
+
+  @media only screen and (min-width: 1024px) {
+    width: 10rem;
+    height: 10rem;
+  }
+`;
 
 const Wrapper = styled.div`
-  max-width: 64rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 48rem;
   width: 100%;
+  padding: 0 2.4rem;
+
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 const Header = styled.header`
-  padding: 4rem 2rem 0;
+  padding: 2rem 0;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 0 2rem 0 0;
+  }
 `;
 
 const Article = styled.article`
-  padding: 8rem 2rem 2rem;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
 
   h1 {
-    margin-bottom: 2rem;
+    font-size: 2.3rem;
+    line-height: 3rem;
   }
 
   p h2 {
     display: inline;
+  }
+
+  strong {
+    font-weight: bold;
   }
 `;
 
@@ -64,13 +85,15 @@ const IndexPage = () => (
         <StyledLogo />
       </Header>
       <Article>
-          <h1>Hi, I'm Jonas Kuiler.</h1>
-          <p>
-            Freelance Software Developer with a creative mindset. I like to
-            connect the dots and make the complex simple by looking at barriers
-            from different perspectives.
-          </p>
-        </Article>
+        <h1>
+          Hi, I'm <strong>Jonas</strong>
+        </h1>
+        <p>
+          Freelance software developer with a <strong>creative</strong> mindset.
+          I <strong>focus</strong> on making the complex <strong>simple</strong>
+          .
+        </p>
+      </Article>
     </Wrapper>
   </Container>
 );
