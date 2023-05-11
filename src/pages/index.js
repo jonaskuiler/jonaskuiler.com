@@ -2,7 +2,8 @@ import * as React from "react";
 import { Reset } from "styled-reset";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Logo from "../assets/badge.inline.svg";
-import { border, layout, space, typography } from "styled-system";
+import { border, layout, space, typography, flexbox } from "styled-system";
+import theme from "../theme";
 
 const Global = createGlobalStyle`
   html {
@@ -34,6 +35,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  ${layout}
+  ${space}
+  ${border}
 `;
 
 const StyledLogo = styled(Logo)`
@@ -56,6 +61,7 @@ const Wrapper = styled.div`
   ${layout}
   ${space}
   ${border}
+  ${flexbox}
 `;
 
 const Header = styled.header`
@@ -67,25 +73,8 @@ const Header = styled.header`
   ${space}
   ${layout}
   ${border}
+  ${flexbox}
 `;
-
-// const Article = styled.article`
-//   font-size: 1.8rem;
-//   line-height: 2.4rem;
-
-//   h1 {
-//     font-size: 2.3rem;
-//     line-height: 3rem;
-//   }
-
-//   p h2 {
-//     display: inline;
-//   }
-
-//   strong {
-//     font-weight: bold;
-//   }
-// `;
 
 const Text = styled.span`
   ${typography}
@@ -93,8 +82,6 @@ const Text = styled.span`
   ${layout}
   ${border}
 `;
-
-const theme = {};
 
 const ExperienceItem = ({ role, company, description }) => {
   return (
@@ -132,7 +119,7 @@ const ExperienceItem = ({ role, company, description }) => {
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
-    <Container>
+    <Container px={{ _: 0, s: 4 }}>
       <Reset />
       <Global />
       <Wrapper mt={4} mb={4}>
@@ -140,19 +127,26 @@ const IndexPage = () => (
           pb={4}
           borderBottomWidth={1}
           borderStyle="solid"
-          borderColor="#"
+          flexDirection={{ _: "column", md: "row" }}
         >
-          <StyledLogo width="3rem" height="3rem" mr={3} />
+          <StyledLogo
+            width={{ _: "5rem", md: "3rem" }}
+            height={{ _: "5rem", md: "3rem" }}
+            mr={3}
+            mb={{ _: 3, md: 0 }}
+          />
           <Text
             as="h1"
             fontSize={5}
             fontFamily="'Golos Text', sans-serif"
             fontWeight="500"
+            textAlign={{ _: "center", md: "left" }}
+            lineHeight={1.3}
           >
-            <Text as="strong" fontWeight={700}>
+            <Text as="strong" fontWeight={700}> 
               Jonas Kuiler
             </Text>{" "}
-            - Freelance Software Developer
+            Freelance Software Developer
           </Text>
         </Header>
       </Wrapper>
