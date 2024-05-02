@@ -2,7 +2,14 @@ import * as React from "react";
 import { Reset } from "styled-reset";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Logo from "../assets/badge.inline.svg";
-import { border, layout, space, typography, flexbox } from "styled-system";
+import {
+  border,
+  layout,
+  space,
+  typography,
+  flexbox,
+  color,
+} from "styled-system";
 import theme from "../theme";
 
 const Global = createGlobalStyle`
@@ -81,6 +88,7 @@ const Text = styled.span`
   ${space}
   ${layout}
   ${border}
+  ${color}
 `;
 
 const ExperienceItem = ({ role, company, description }) => {
@@ -143,7 +151,7 @@ const IndexPage = () => (
             textAlign={{ _: "center", md: "left" }}
             lineHeight={1.3}
           >
-            <Text as="strong" fontWeight={700}> 
+            <Text as="strong" fontWeight={700}>
               Jonas Kuiler
             </Text>{" "}
             Freelance Software Developer
@@ -258,6 +266,23 @@ const IndexPage = () => (
             My main tech stack here was JavaScript (both in-browser and NodeJS), VueJS and several animation frameworks like PixiJS, GSAP and more. 
           `}
         />
+      </Wrapper>
+
+      <Wrapper mb={5}>
+        {typeof window !== "undefined" && (
+          <Text
+            as="p"
+            fontSize={"11px"}
+            lineHeight={1.6}
+            textAlign="center"
+            fontFamily="'Golos Text', sans-serif"
+            color="rgba(0, 0, 0, 0.4)"
+          >
+            JONAS KUILER SOFTWARE DEVELOPMENT - MINCKELERSSTRAAT 275, 1223 LE
+            HILVERSUM - MAIL@JONASKUILER.COM - KVK 83410260 - BTW-ID
+            NL003817175B85
+          </Text>
+        )}
       </Wrapper>
     </Container>
   </ThemeProvider>
