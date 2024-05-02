@@ -279,8 +279,7 @@ const IndexPage = () => (
             color="rgba(0, 0, 0, 0.4)"
           >
             JONAS KUILER SOFTWARE DEVELOPMENT - MINCKELERSSTRAAT 275, 1223 LE
-            HILVERSUM - MAIL@JONASKUILER.COM - KVK 83410260 - BTW-ID
-            NL003817175B85
+            HILVERSUM - MAIL@JONASKUILER.COM - KVK:83410260 - BTW-ID:NL003817175B85
           </Text>
         )}
       </Wrapper>
