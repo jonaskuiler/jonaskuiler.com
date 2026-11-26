@@ -1,0 +1,228 @@
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/archivo-latin.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: dark;
+  --ground: #07091c;
+  --ink: #f3f5ff;
+  --dim: #b4bce0;
+  --rule: rgba(180, 188, 224, 0.28);
+  --pink: #ff2e9a;
+  --gutter: clamp(20px, 5vw, 64px);
+  --measure: 38rem;
+  --label: 15rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scrollbar-color: var(--pink) var(--ground);
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--ground);
+}
+
+a {
+  color: var(--pink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.page {
+  max-width: calc(var(--label) + var(--measure) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Top line: name on the left, one way to reach me on the right. */
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 0;
+  font-size: 1rem;
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.name::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--pink);
+}
+
+/* Hook */
+.hook {
+  padding: clamp(3.5rem, 13vh, 9rem) 0 clamp(4rem, 14vh, 9rem);
+  font-size: clamp(2.125rem, 6.2vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.hook span {
+  display: block;
+  max-width: 18ch;
+}
+
+.hook .then {
+  color: var(--dim);
+}
+
+.hook .now {
+  margin-top: 0.35em;
+}
+
+/* Sections: heading in the left column, copy in the right. */
+.section {
+  display: grid;
+  grid-template-columns: var(--label) minmax(0, var(--measure));
+  padding: 3.5rem 0 4.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section h2 {
+  padding-right: 2rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.copy p + p {
+  margin-top: 1.15em;
+}
+
+.copy p {
+  text-wrap: pretty;
+}
+
+/* Featured work */
+.work {
+  display: grid;
+  gap: 3rem;
+}
+
+.work h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.625rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+/* Contact */
+.contact p {
+  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.legal {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--dim);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  min-height: 5.5rem;
+}
+
+/* 404 */
+.lost {
+  padding: clamp(3.5rem, 13vh, 9rem) 0;
+}
+
+.lost h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.125rem, 6.2vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 52em) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 2.5rem 0 3.25rem;
+  }
+
+  .section h2 {
+    padding-right: 0;
+    color: var(--dim);
+  }
+
+  .work {
+    gap: 2.5rem;
+  }
+
+  .work h3 {
+    font-size: 1.4375rem;
+  }
+}
+
+@media print {
+  :root {
+    --ground: #fff;
+    --ink: #000;
+    --dim: #333;
+    --pink: #000;
+  }
+}
